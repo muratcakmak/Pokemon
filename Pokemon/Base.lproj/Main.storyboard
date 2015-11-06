@@ -24,23 +24,53 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hwt-SN-jv8">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTv-X9-Jib">
-                                        <rect key="frame" x="237" y="10" width="127" height="37"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pokemon_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="6Ff-UP-GzX">
+                                        <rect key="frame" x="216" y="8" width="169" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="37" id="B8u-At-3q1"/>
-                                            <constraint firstAttribute="width" constant="127" id="gaP-8u-vcu"/>
+                                            <constraint firstAttribute="width" constant="169" id="RIJ-pX-COp"/>
+                                            <constraint firstAttribute="height" constant="48" id="S6Y-wt-TOS"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="31"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-aQ-HUM">
+                                        <rect key="frame" x="538" y="9" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="9MN-fq-iC7"/>
+                                            <constraint firstAttribute="height" constant="45" id="BUU-8A-qdt"/>
+                                            <constraint firstAttribute="width" constant="45" id="VJl-NO-xRZ"/>
+                                            <constraint firstAttribute="width" constant="45" id="q6D-aI-Skm"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="musicbutton"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9MN-fq-iC7"/>
+                                                <exclude reference="VJl-NO-xRZ"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="musicButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oS6-zq-E2Z"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="ZTv-X9-Jib" firstAttribute="top" secondItem="Hwt-SN-jv8" secondAttribute="top" constant="10" id="aTI-Pg-e3m"/>
+                                    <constraint firstAttribute="trailing" secondItem="bd4-aQ-HUM" secondAttribute="trailing" constant="17" id="G7X-EG-5tu"/>
+                                    <constraint firstAttribute="trailing" secondItem="bd4-aQ-HUM" secondAttribute="trailing" constant="35" id="Nde-VG-pCu"/>
+                                    <constraint firstItem="6Ff-UP-GzX" firstAttribute="top" secondItem="Hwt-SN-jv8" secondAttribute="top" constant="8" id="QgL-Yp-rLg"/>
+                                    <constraint firstItem="6Ff-UP-GzX" firstAttribute="centerX" secondItem="Hwt-SN-jv8" secondAttribute="centerX" id="Ugh-7D-lb7"/>
                                     <constraint firstAttribute="height" constant="55" id="hYQ-Lv-pqR"/>
-                                    <constraint firstItem="ZTv-X9-Jib" firstAttribute="centerX" secondItem="Hwt-SN-jv8" secondAttribute="centerX" id="ovc-mX-lbW"/>
+                                    <constraint firstItem="bd4-aQ-HUM" firstAttribute="top" secondItem="Hwt-SN-jv8" secondAttribute="top" constant="14" id="rLh-Ql-ZX6"/>
+                                    <constraint firstItem="bd4-aQ-HUM" firstAttribute="top" secondItem="Hwt-SN-jv8" secondAttribute="top" constant="9" id="tJ9-nM-MMG"/>
+                                    <constraint firstItem="bd4-aQ-HUM" firstAttribute="top" secondItem="Hwt-SN-jv8" secondAttribute="top" constant="9" id="wN9-Lz-j7V"/>
+                                    <constraint firstAttribute="trailing" secondItem="bd4-aQ-HUM" secondAttribute="trailing" constant="17" id="z5c-dH-6Fy"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="G7X-EG-5tu"/>
+                                        <exclude reference="Nde-VG-pCu"/>
+                                        <exclude reference="rLh-Ql-ZX6"/>
+                                        <exclude reference="tJ9-nM-MMG"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="llj-bU-wl1">
                                 <rect key="frame" x="0.0" y="55" width="600" height="44"/>
@@ -127,6 +157,8 @@
     </scenes>
     <resources>
         <image name="197" width="120" height="120"/>
+        <image name="Pokemon_Logo" width="2000" height="736"/>
         <image name="bg" width="1920" height="1200"/>
+        <image name="musicbutton" width="700" height="700"/>
     </resources>
 </document>

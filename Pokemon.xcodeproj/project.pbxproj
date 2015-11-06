@@ -11,6 +11,8 @@
 		8BAB58271BEC9FE100E91CC1 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB58261BEC9FE100E91CC1 /* Pokemon.swift */; };
 		8BAB582A1BECA9FB00E91CC1 /* PokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB58291BECA9FB00E91CC1 /* PokemonCollectionViewCell.swift */; };
 		8BAB582C1BECC30C00E91CC1 /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB582B1BECC30C00E91CC1 /* csv.swift */; };
+		8BB2899F1BECD37B00D3186C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BB2899E1BECD37B00D3186C /* Info.plist */; };
+		8BB289A11BECE01A00D3186C /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BB289A01BECE01A00D3186C /* music.mp3 */; };
 		8BC476201BEC9B2300049B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC4761F1BEC9B2300049B41 /* AppDelegate.swift */; };
 		8BC476221BEC9B2300049B41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC476211BEC9B2300049B41 /* ViewController.swift */; };
 		8BC476251BEC9B2300049B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC476231BEC9B2300049B41 /* Main.storyboard */; };
@@ -23,13 +25,14 @@
 		8BAB58261BEC9FE100E91CC1 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		8BAB58291BECA9FB00E91CC1 /* PokemonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonCollectionViewCell.swift; sourceTree = "<group>"; };
 		8BAB582B1BECC30C00E91CC1 /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = csv.swift; path = ../csv.swift; sourceTree = "<group>"; };
+		8BB2899E1BECD37B00D3186C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BB289A01BECE01A00D3186C /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		8BC4761C1BEC9B2300049B41 /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC4761F1BEC9B2300049B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BC476211BEC9B2300049B41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8BC476241BEC9B2300049B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BC476261BEC9B2300049B41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BC476291BEC9B2300049B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8BC4762B1BEC9B2300049B41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +114,8 @@
 				8BC476231BEC9B2300049B41 /* Main.storyboard */,
 				8BC476261BEC9B2300049B41 /* Assets.xcassets */,
 				8BC476281BEC9B2300049B41 /* LaunchScreen.storyboard */,
-				8BC4762B1BEC9B2300049B41 /* Info.plist */,
+				8BB2899E1BECD37B00D3186C /* Info.plist */,
+				8BB289A01BECE01A00D3186C /* music.mp3 */,
 			);
 			path = Pokemon;
 			sourceTree = "<group>";
@@ -176,7 +180,9 @@
 			files = (
 				8BC4762A1BEC9B2300049B41 /* LaunchScreen.storyboard in Resources */,
 				8BC476271BEC9B2300049B41 /* Assets.xcassets in Resources */,
+				8BB289A11BECE01A00D3186C /* music.mp3 in Resources */,
 				8BAB58241BEC9E2200E91CC1 /* pokemon.csv in Resources */,
+				8BB2899F1BECD37B00D3186C /* Info.plist in Resources */,
 				8BC476251BEC9B2300049B41 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
