@@ -10,11 +10,17 @@ import UIKit
 import AVFoundation
 
 
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var collectionViewPokemon: UICollectionView!
+    @IBOutlet weak var musicButtonImage: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var pokemon = [Pokemon]()
+    
+    var inEditingMode = false
+    
+    var resultPokemons = [Pokemon]()
     
     var musicPlayer: AVAudioPlayer!
     
@@ -23,6 +29,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
         collectionViewPokemon.delegate = self
         collectionViewPokemon.dataSource = self
+        searchBar.delegate = self
         parserCSVtoArray()
         
         playMusic()
@@ -35,7 +42,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             musicPlayer = try AVAudioPlayer(contentsOfURL: NSURL(string: path)!)
             musicPlayer.prepareToPlay()
             musicPlayer.numberOfLoops = -1
-            musicPlayer.play()
+            musicButtonImage.alpha = 0.2
             
         }catch let err as NSError{
             print(err.debugDescription)
@@ -69,7 +76,13 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if let cell = collectionViewPokemon.dequeueReusableCellWithReuseIdentifier("PokemonCollectionVC", forIndexPath: indexPath) as? PokemonCollectionViewCell{
-            cell.createCell(pokemon[indexPath.row])
+            
+            if inEditingMode{
+                cell.createCell(resultPokemons[indexPath.row])
+            }else{
+                cell.createCell(pokemon[indexPath.row])
+            }
+            
             return cell
         }else{
             return UICollectionViewCell()
@@ -87,7 +100,11 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 718
+        if inEditingMode{
+            return resultPokemons.count
+        }
+        return pokemon.count
+        
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -102,8 +119,19 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             musicPlayer.play()
             sender.alpha = 1.0
         }
-        
-        
     }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == ""{
+            inEditingMode = false
+            print("out")
+        }else{
+            inEditingMode = true
+            let lower = searchBar.text!.lowercaseString
+            resultPokemons = pokemon.filter({$0.name.rangeOfString(lower) != nil})
+            collectionViewPokemon.reloadData()
+            print("in")        }
+    }
+       
 }
 
