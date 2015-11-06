@@ -32,6 +32,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         searchBar.delegate = self
         parserCSVtoArray()
         
+        searchBar.returnKeyType = UIReturnKeyType.Done
         playMusic()
     }
     
@@ -91,7 +92,15 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        var poke = Pokemon!()
         
+        if inEditingMode {
+            poke = resultPokemons[indexPath.row]
+        }else{
+            poke = pokemon[indexPath.row]
+        }
+        
+        performSegueWithIdentifier("DetailViewController", sender: poke)
     }
     
 
@@ -121,17 +130,34 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         }
     }
     
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == ""{
             inEditingMode = false
-            print("out")
+            view.endEditing(true)
+            collectionViewPokemon.reloadData()
         }else{
             inEditingMode = true
             let lower = searchBar.text!.lowercaseString
             resultPokemons = pokemon.filter({$0.name.rangeOfString(lower) != nil})
             collectionViewPokemon.reloadData()
-            print("in")        }
+
+            }
     }
-       
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "DetailViewController" {
+            if let detailVC = segue.destinationViewController as? DetailViewController{
+                if let poke = sender as? Pokemon{
+                    detailVC.pokemon = poke
+                }
+            }
+        
+        }
+    }
+    
 }
 
