@@ -199,28 +199,28 @@
                                     <constraint firstItem="YGv-G0-Ovj" firstAttribute="leading" secondItem="wCd-ZJ-Dxn" secondAttribute="leading" constant="17" id="sBm-Cn-Chf"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DiV-Nd-w2A">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DiV-Nd-w2A">
                                 <rect key="frame" x="20" y="68" width="520" height="512"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vpA-OM-Okw">
-                                        <rect key="frame" x="206" y="0.0" width="109" height="33"/>
+                                        <rect key="frame" x="206" y="0.0" width="109" height="29"/>
                                         <segments>
                                             <segment title="Bio"/>
                                             <segment title="Moves"/>
                                         </segments>
                                     </segmentedControl>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="9do-Gy-GSu">
-                                        <rect key="frame" x="190" y="32" width="140" height="140"/>
+                                        <rect key="frame" x="190" y="40" width="140" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="dPy-Ed-aiV"/>
                                             <constraint firstAttribute="height" constant="140" id="mjU-O2-t2E"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5e8-9U-bGt">
-                                        <rect key="frame" x="0.0" y="172" width="520" height="223"/>
+                                        <rect key="frame" x="0.0" y="191" width="520" height="198"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="erJ-97-eiP">
-                                                <rect key="frame" x="0.0" y="32" width="346" height="158"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="346" height="198"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-Xk-ZBg">
                                                         <rect key="frame" x="0.0" y="0.0" width="346" height="20"/>
@@ -273,20 +273,32 @@
                                                         <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUW-gz-U41">
+                                                        <rect key="frame" x="0.0" y="158" width="346" height="20"/>
+                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="110" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEV-n0-2Sh">
+                                                        <rect key="frame" x="0.0" y="178" width="346" height="20"/>
+                                                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="346" id="fot-j5-VLW"/>
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDA-3U-IoR">
-                                                <rect key="frame" x="346" y="40" width="1" height="142"/>
+                                                <rect key="frame" x="346" y="28" width="1" height="142"/>
                                                 <color key="backgroundColor" red="0.25098040699958801" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="TYy-qQ-C5q"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6I-xa-wH9">
-                                                <rect key="frame" x="347" y="14" width="173" height="196"/>
+                                                <rect key="frame" x="347" y="1" width="173" height="196"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</string>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -294,12 +306,14 @@
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="YDA-3U-IoR" firstAttribute="leading" secondItem="erJ-97-eiP" secondAttribute="trailing" constant="1" id="6Ra-ov-edR"/>
+                                            <constraint firstItem="V6I-xa-wH9" firstAttribute="leading" secondItem="YDA-3U-IoR" secondAttribute="trailing" constant="2" id="fGG-8Y-sWS"/>
                                             <constraint firstItem="V6I-xa-wH9" firstAttribute="leading" secondItem="YDA-3U-IoR" secondAttribute="trailing" id="xgo-B2-p2I"/>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Evolution is Bla bla bla" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuO-Lv-DC2">
-                                        <rect key="frame" x="164" y="395" width="194" height="32"/>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <rect key="frame" x="186" y="400" width="148" height="15"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -316,7 +330,7 @@
                                                             <constraint firstAttribute="height" constant="86" id="qK1-1y-SoS"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="239" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-gz-msq">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="258" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-gz-msq">
                                                         <rect key="frame" x="86" y="0.0" width="86" height="86"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="86" id="2Yh-ia-V8w"/>
@@ -326,8 +340,16 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="dNA-gz-msq" firstAttribute="centerX" secondItem="j1Y-c9-yur" secondAttribute="centerX" id="7Gw-xX-Ijw"/>
+                                                    <constraint firstAttribute="height" constant="86" id="YQc-MD-sWE"/>
                                                     <constraint firstItem="Icd-qV-Cks" firstAttribute="centerX" secondItem="j1Y-c9-yur" secondAttribute="centerX" id="nC2-99-VxV"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="YQc-MD-sWE"/>
+                                                        <exclude reference="nC2-99-VxV"/>
+                                                        <exclude reference="7Gw-xX-Ijw"/>
+                                                    </mask>
+                                                </variation>
                                             </stackView>
                                         </subviews>
                                     </stackView>
@@ -354,7 +376,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="defensePoke" destination="Ulz-dJ-Of9" id="RFk-c7-Nal"/>
+                        <outlet property="descriptionPoke" destination="V6I-xa-wH9" id="Wde-XW-f4v"/>
+                        <outlet property="heightPoke" destination="EW0-H7-yMd" id="bIB-u4-b0j"/>
                         <outlet property="lbl" destination="QEj-jD-rnq" id="mnb-wY-Xdq"/>
+                        <outlet property="leftBottomImage" destination="Icd-qV-Cks" id="4dL-xx-WO1"/>
+                        <outlet property="mainImage" destination="9do-Gy-GSu" id="wJu-SJ-czO"/>
+                        <outlet property="nextEvo" destination="iuO-Lv-DC2" id="Pe5-0a-vMc"/>
+                        <outlet property="pokemonID" destination="fEV-n0-2Sh" id="sB8-OL-9MB"/>
+                        <outlet property="rightBottomImage" destination="dNA-gz-msq" id="t2j-0g-yh5"/>
+                        <outlet property="typePoke" destination="ehA-fU-aZe" id="8KH-SW-4Mt"/>
+                        <outlet property="weightPoke" destination="A96-EW-D2v" id="pOc-8e-zb7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEM-yR-AMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -366,7 +398,7 @@
         <image name="197" width="120" height="120"/>
         <image name="2" width="120" height="120"/>
         <image name="219" width="120" height="120"/>
-        <image name="239" width="120" height="120"/>
+        <image name="258" width="96" height="96"/>
         <image name="Pokemon_Logo" width="2000" height="736"/>
         <image name="backbuttonPoke" width="700" height="700"/>
         <image name="bg" width="1920" height="1200"/>
