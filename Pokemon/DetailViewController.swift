@@ -34,9 +34,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         lbl.text = pokemon.name
-
+        mainImage.image = UIImage(named: "\(pokemon.pokemonID)")
         
-    
+        pokemon.downloadPokemonDetails { () -> () in
+            
+        }
     }
 
     @IBAction func backButton(sender: AnyObject) {
