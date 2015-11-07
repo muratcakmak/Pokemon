@@ -17,8 +17,10 @@ class Pokemon {
     private var _defensePoke: String!
     private var _heightPoke: String!
     private var _weightPoke: String!
-    private var _nextEvolutionTxt: String!
+    private var _nextEvolutionLevel: String!
     private var _pokemonURL: String!
+    private var _nextEvolutionText: String!
+    private var _nextEvolutionID: String!
     
     
     var name: String{
@@ -27,6 +29,35 @@ class Pokemon {
     
     var pokemonID: Int{
         return _pokemonID
+    }
+    
+    var description: String{
+        return _description
+    }
+    
+    var typePoke: String{
+        return _typePoke
+    }
+    var defensePoke: String{
+        return _defensePoke
+    }
+    var heightPoke: String{
+        return _heightPoke
+    }
+    var weightPoke: String{
+        return _weightPoke
+    }
+    var nextEvolutionLevel: String{
+        return _nextEvolutionLevel
+    }
+    var nextEvolutionText: String{
+        return _nextEvolutionText
+    }
+    var nextEvolutionID: String {
+        return _nextEvolutionID
+    }
+    var pokemonURL: String {
+        return _pokemonURL
     }
     
     init(name: String, pokemonID: Int){
@@ -92,13 +123,41 @@ class Pokemon {
                     self._description = ""
                 }
                 
+                if let evolutions = dict["evolutions"] as? [Dictionary<String,AnyObject>] where evolutions.count > 0{
+                    if let to = evolutions[0]["to"] as? String{
+                        if to.rangeOfString("mega") == nil {
+                            if let uri = evolutions[0]["resource_uri"] as? String{
+                                let tempuri = uri.stringByReplacingOccurrencesOfString("/api/v1/pokemon/", withString: "")
+                                let id = tempuri.stringByReplacingOccurrencesOfString("/", withString: "")
+                                self._nextEvolutionID = id
+                                self._nextEvolutionText = to
+                                print(self._nextEvolutionText)
+                            }
+                    
+                        }else{
+                            self._nextEvolutionID = ""
+                        }
+                        
+                        if let level = evolutions[0]["level"] as? Int{
+                            self._nextEvolutionLevel = "\(level)"
+
+                        }else{
+                            self._nextEvolutionLevel = ""
+                        }
+                        
+                    }else{
+                        self._nextEvolutionText = ""
+                    }
+                    
+
                 
-                
-                
-                
-                
+                }
+                    
+                }
             }
+        
         }
+    
+        
         
     }
-}
