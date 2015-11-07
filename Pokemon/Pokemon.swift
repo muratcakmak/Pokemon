@@ -48,13 +48,31 @@ class Pokemon {
         return _weightPoke
     }
     var nextEvolutionLevel: String{
-        return _nextEvolutionLevel
+        get{
+            if _nextEvolutionLevel == nil{
+                _nextEvolutionLevel = ""
+            }
+            return _nextEvolutionLevel
+        }
+        
     }
     var nextEvolutionText: String{
-        return _nextEvolutionText
+        get {
+            if _nextEvolutionText == nil{
+                _nextEvolutionText = ""
+            }
+            return _nextEvolutionText
+
+        }
     }
     var nextEvolutionID: String {
-        return _nextEvolutionID
+        get{
+            if _nextEvolutionID == nil {
+                _nextEvolutionID = ""
+            }
+            return _nextEvolutionID
+        }
+        
     }
     var pokemonURL: String {
         return _pokemonURL
@@ -114,7 +132,8 @@ class Pokemon {
                             if let desc = descriptionResult.value?["description"] as? String {
                                 self._description = desc
                             }
-                            
+                            completed()
+
                         }
                         
                     }
@@ -131,7 +150,9 @@ class Pokemon {
                                 let id = tempuri.stringByReplacingOccurrencesOfString("/", withString: "")
                                 self._nextEvolutionID = id
                                 self._nextEvolutionText = to
+                                print("********************")
                                 print(self._nextEvolutionText)
+                                print(self._nextEvolutionID)
                             }
                     
                         }else{

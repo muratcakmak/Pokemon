@@ -34,13 +34,32 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         lbl.text = pokemon.name
-        mainImage.image = UIImage(named: "\(pokemon.pokemonID)")
-        
+        let img = UIImage(named: "\(pokemon.pokemonID)")
+        mainImage.image = img
+        leftBottomImage.image = img
         pokemon.downloadPokemonDetails { () -> () in
+            self.updateOutlets()
             
         }
     }
-
+    func updateOutlets(){
+        typePoke.text = pokemon.typePoke
+        defensePoke.text = pokemon.defensePoke
+        heightPoke.text = pokemon.heightPoke
+        weightPoke.text = pokemon.weightPoke
+        descriptionPoke.text = pokemon.description
+        
+        if pokemon.nextEvolutionID == "" {
+            nextEvo.text = "No evolution"
+            rightBottomImage.hidden = true
+        }else{
+            rightBottomImage.hidden = false
+            rightBottomImage.image = UIImage(named: pokemon.nextEvolutionID)
+            nextEvo.text = "Next evolution is \(pokemon.nextEvolutionText)"
+            
+        }
+        
+    }
     @IBAction func backButton(sender: AnyObject) {
         
         dismissViewControllerAnimated(true, completion: nil)
